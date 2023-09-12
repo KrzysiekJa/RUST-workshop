@@ -7,11 +7,12 @@ fn main() {
     
     // exercise 1
     println!(">> 1");
-    exercises::throwed_ball();
+    let ball_results: [f32; 3] = exercises::get_throwed_ball_pos( 3.44, 9.81, [0.54, 0.1, 0.235] );
+    println!("Throwed ball on Earth: {} {} {}", ball_results[0], ball_results[1], ball_results[2]);
 
     // exercise 2
     println!(">> 2");
-    exercises::throwed_ball_planets();
+    exercises::get_throwed_ball_pos_planets();
 
     // exercise 3
     println!(">> 3");
@@ -26,12 +27,12 @@ fn main() {
 
     // exercise 5
     println!(">> 5");
-    let circle_params: (f32, f32) = exercises::circle_params( 4 as f32 );
+    let circle_params: (f32, f32) = exercises::get_circle_params( 4 as f32 );
     println!("{} {}", circle_params.0, circle_params.1);
     
     // exercise 6
     println!(">> 6");
-    let sector_params: (f32, f32) = exercises::sector_params( 4 as f32, 165.0 );
+    let sector_params: (f32, f32) = exercises::get_sector_params( 4 as f32, 165.0 );
     println!("{} {}", sector_params.0, sector_params.1);
 
     // exercise 7
@@ -41,9 +42,9 @@ fn main() {
     
     // exercise 8
     println!(">> 8");
-    let compound_interest_0: f32 = exercises::compound_interest( 1000.0, 1, 2, 0.05 );
+    let compound_interest_0: f32 = exercises::get_compound_interest( 1000.0, 1, 2, 0.05 );
     println!("{}", compound_interest_0);
-    let compound_interest_1: f32 = exercises::compound_interest( 1000.0, 4, 3, 0.023 );
+    let compound_interest_1: f32 = exercises::get_compound_interest( 1000.0, 4, 3, 0.023 );
     println!("{}", compound_interest_1);
     
 }
