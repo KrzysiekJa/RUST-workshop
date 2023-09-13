@@ -1,4 +1,6 @@
+
 use std::f32::consts::PI;
+use std::collections::HashMap;
 
 
 pub fn exercise_types()
@@ -12,7 +14,7 @@ pub fn exercise_types()
     println!("{}", t as u8);
 }
 
-pub fn get_throwed_ball_pos(v_0: f32, g: f32, t_array: [f32; 3]) -> [f32; 3]
+pub fn get_throwed_ball_pos( v_0: f32, g: f32, t_array: [f32; 3] ) -> [f32; 3]
 {
     let mut h_array: [f32; 3] = [0.0; 3];
 
@@ -23,31 +25,31 @@ pub fn get_throwed_ball_pos(v_0: f32, g: f32, t_array: [f32; 3]) -> [f32; 3]
     return h_array;
 }
 
-pub fn get_throwed_ball_pos_planets()
+pub fn get_throwed_ball_pos_planets( v_0: f32, gravities: Vec<f32>, t_array: [f32; 3] ) -> Vec<[f32; 3]>
 {
-    let v_0: f32 = 3.44;
-    let gravities = [3.7, 8.8, 9.8, 3.7, 0.27, 24.7, 10.5, 9.0, 11.7];
-    let t_list = [0.54, 0.1, 0.235];
+    let mut result_vec: Vec<[f32; 3]> = Vec::new();
 
-    for g in gravities{
-        for t in t_list {
-            let h: f32 = v_0 * t - 0.5 * g * f32::powf(t, 2.0);
-            println!("{}", h);
-        }
+    for g in gravities.iter() {
+        let tmp_array = get_throwed_ball_pos( v_0, * g, t_array );
+        result_vec.push(tmp_array);
     }
+    return result_vec;
 }
 
-pub fn convert_meters_to_gb(meters: f32)
+pub fn convert_meters_to_gb(meters: f32) -> HashMap<&'static str, f32>
 {
     let in_coeff:f32 = 39.37;
     let ft_coeff:f32 = 3.2808;
     let yr_coeff:f32 = 1.0936;
     let mi_coeff:f32 = 0.0006213712;
 
-    println!("{} inches", meters * in_coeff);
-    println!("{} feets", meters * ft_coeff);
-    println!("{} yards", meters * yr_coeff);
-    println!("{} milles", meters * mi_coeff);
+    let conversion_map: HashMap<&str, f32> = HashMap::from([
+        ("inches", meters * in_coeff),
+        ("feets", meters * ft_coeff),
+        ("yards", meters * yr_coeff),
+        ("milles", meters * mi_coeff),
+    ]);
+    return conversion_map;
 }
 
 pub fn convert_c_degree_to_f(c_degree: f32) -> f32

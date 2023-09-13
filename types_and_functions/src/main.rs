@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 mod exercises;
 
 fn main() {
@@ -12,11 +13,23 @@ fn main() {
 
     // exercise 2
     println!(">> 2");
-    exercises::get_throwed_ball_pos_planets();
+    let ball_pos_vec: Vec<[f32; 3]> = exercises::get_throwed_ball_pos_planets( 
+        3.44 , 
+        vec![3.7, 8.8, 9.8, 3.7, 0.27, 24.7, 10.5, 9.0, 11.7], 
+        [0.54, 0.1, 0.235] 
+    );
+    for pos_arr in ball_pos_vec.iter() {
+        println!("Throwed ball : {} {} {}", pos_arr[0], pos_arr[1], pos_arr[2]);
+    }
 
     // exercise 3
     println!(">> 3");
-    exercises::convert_meters_to_gb( 640 as f32 );
+    let meters: i32 = 640;
+    println!("{} meters is:", meters);
+    let conversion_map: HashMap<&str, f32> = exercises::convert_meters_to_gb( meters as f32 );
+    for (key, val) in conversion_map.iter() {
+        println!("{val} {key}");
+    }
 
     // exercise 4
     println!(">> 4");
