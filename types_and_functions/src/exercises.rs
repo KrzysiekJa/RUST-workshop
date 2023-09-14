@@ -90,3 +90,8 @@ pub fn get_compound_interest(k_0: f32, m: i32, n: i32, r: f32) -> f32
     change_param = f32::powf( change_param, (m*n) as f32 );
     return k_0 * change_param;
 }
+
+pub fn calculate_distance(velocity: f32, time: f32) -> f32
+{
+    return velocity * time; // [km/s]
+}
