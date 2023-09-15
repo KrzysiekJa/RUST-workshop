@@ -78,7 +78,7 @@ fn main() {
 
     // exercise 10
     println!(">> 10");
-    println!("The Earth travels the way:");
+    println!("The Earth travels distance:");
     let distance_hour = exercises::calculate_distance( 30.0, (60*60) as f32 );
     println!("{:e} km after hour", distance_hour);
     let distance_day = exercises::calculate_distance( 30.0, (24*60*60) as f32 );
