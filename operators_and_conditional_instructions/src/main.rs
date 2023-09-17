@@ -54,7 +54,7 @@ fn main() {
     // exercise 6
     println!(">> 6");
     let s: &str = "Ala ma kota";
-    let s_vec = functions::split_sentence_into_words(s);
+    let s_vec: Vec<String> = functions::split_sentence_into_words(s);
     println!("{}-{}-{}", s_vec[0], s_vec[1], s_vec[2]);
 
     // exercise 7
@@ -64,6 +64,5 @@ fn main() {
     // exercise 8
     println!(">> 8");
     println!("{}: bin {:b}, hex {:x}, oct {:o}", bite_b, bite_b, bite_b, bite_b);
-
 
 }
