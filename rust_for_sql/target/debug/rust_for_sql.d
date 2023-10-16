@@ -1,1 +1,0 @@
-/Users/krzysiu/Desktop/RUST-workshop/rust_for_sql/target/debug/rust_for_sql: /Users/krzysiu/Desktop/RUST-workshop/rust_for_sql/src/main.rs /Users/krzysiu/Desktop/RUST-workshop/rust_for_sql/src/simple_sql.rs /Users/krzysiu/Desktop/RUST-workshop/rust_for_sql/src/time_stamp.rs
