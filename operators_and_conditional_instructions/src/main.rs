@@ -60,6 +60,13 @@ fn main() {
     // exercise 7
     println!(">> 7");
     println!("PESEL");
+    // 02271409862
+    let pesel_0 = String::from( "02271409862" );
+    let pesel_0_vec = functions::decode_PESEL( pesel_0.clone() ).unwrap();
+    println!("{}: {:?} {:?} {:?}", pesel_0, pesel_0_vec.get("sex"), pesel_0_vec.get("month"), pesel_0_vec.get("age"));
+    let pesel_1 = String::from( "92071314764" );
+    let pesel_1_vec = functions::decode_PESEL( pesel_1.clone() ).unwrap();
+    println!("{}: {:?} {:?} {:?}", pesel_1, pesel_1_vec.get("sex"), pesel_1_vec.get("month"), pesel_1_vec.get("age"));
 
     // exercise 8
     println!(">> 8");

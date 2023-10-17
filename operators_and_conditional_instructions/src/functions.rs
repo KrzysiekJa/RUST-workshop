@@ -1,3 +1,6 @@
+use std::collections::HashMap;
+use chrono::Datelike;
+
 pub fn heaviside(x: f32) -> u8
 {
     return ( x >= 0.0 ) as u8;
@@ -88,4 +91,42 @@ pub fn split_sentence_into_words(sentence: &str) -> Vec<String>
     //     .split_whitespace()
     //     .map(String::from)
     //     .collect()
+}
+
+pub fn decode_PESEL( pesel_code: String ) -> Option< HashMap<String, String> >
+{
+    if pesel_code.len() != 11 && !pesel_code.parse::<i32>().is_ok() {
+        return None;
+    }
+
+    let mut pesel_data: HashMap<String, String> = Default::default();
+    let sex: String;
+    let sex_digit: char = pesel_code.chars().nth(9).unwrap();
+    
+    if sex_digit as u32 % 2 == 1 {
+        sex = "male".to_string();
+    } else {
+        sex = "female".to_string();
+    }
+    pesel_data.insert( "sex".to_string(), sex );
+
+    let century: u32 = pesel_code.chars().nth(0).unwrap().to_digit(10).unwrap() * 10 + pesel_code.chars().nth(1).unwrap().to_digit(10).unwrap();
+    let month_digit = pesel_code[2..4].parse::<u32>().unwrap();
+    let months = vec![
+        "January", "February", "March", "April", "May", "June", "July", "August",
+        "September", "October", "November", "December",
+    ];
+    let current_year = chrono::Utc::now().year();
+
+    if month_digit as i32 <= 12 {
+        let birth_year = 1900 + century as i32;
+        pesel_data.insert( "month".to_string(), months[month_digit as usize - 1].to_string() );    
+        pesel_data.insert( "age".to_string(), (current_year - birth_year).to_string() );
+    } else {
+        let birth_year = 2000 + century as i32;
+        pesel_data.insert( "month".to_string(), months[month_digit as usize - 21].to_string() );    
+        pesel_data.insert( "age".to_string(), (current_year - birth_year).to_string() );
+    }
+
+    return Some( pesel_data );
 }
