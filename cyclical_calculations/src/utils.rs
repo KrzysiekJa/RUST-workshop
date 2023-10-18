@@ -81,3 +81,30 @@ pub fn inverse_cubes_seq(n: i32) -> f32
     }
     return res;
 }
+
+pub fn find_smallest_divisible_number_by_7(limit: i32) -> i32
+{
+    let mut i: i32 = 7;
+
+    while i <= limit {
+        if i % 4 == 1 && i % 5 == 1 && i % 6 == 1 {
+            break;
+        }
+        i = i + 7;
+    }
+    return i;
+}
+
+pub fn count_numbers_divisible_by_7(limit: i32) -> i32
+{
+    let mut i: i32 = 7;
+    let mut count: i32 = 0;
+
+    while i <= limit {
+        if i % 4 == 1 && i % 5 == 1 && i % 6 == 1 {
+            count = count + 1;
+        }
+        i = i + 7;
+    }
+    return count;
+}

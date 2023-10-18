@@ -44,6 +44,17 @@ fn main() {
 
     // exercise 4
     println!(">> 4");
+    let smallest_divisible_number_by_7 = utils::find_smallest_divisible_number_by_7( 1000 );
+    println!( "The smallest divisible number 7 which, when divided by 2, 3, 4, 5, 6, gives the remainder r = 1:" );
+    println!( "{}", smallest_divisible_number_by_7 );
 
+    // exercise 5
+    println!(">> 5");
+    let counted_numbers_divisible_by_7_lim_100 = utils::count_numbers_divisible_by_7( 100 );
+    println!( "Counted numbers divisible 7 which, when divided by 2, 3, 4, 5, 6, gives the remainder r = 1:" );
+    println!( "limit 100: {}", counted_numbers_divisible_by_7_lim_100 );
+    let counted_numbers_divisible_by_7_lim_2000 = utils::count_numbers_divisible_by_7( 2000 );
+    println!( "Counted numbers divisible 7 which, when divided by 2, 3, 4, 5, 6, gives the remainder r = 1:" );
+    println!( "limit 2000: {}", counted_numbers_divisible_by_7_lim_2000 );
 
 }
