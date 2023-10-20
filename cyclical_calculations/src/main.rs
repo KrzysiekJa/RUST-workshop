@@ -66,10 +66,25 @@ fn main() {
 
     // exercise 7
     println!(">> 7");
-    utils::generate_and_print_fibonacci( 30 );
+    utils::generate_and_print_fibonacci( 100 );
     println!( "" );
 
     // exercise 8
     utils::get_multiplication_table();
+
+    // exercise 9
+    println!(">> 9");
+    let factorial_15 = utils::get_factorial( 15 );
+    let factorial_str = factorial_15.to_string();
+    println!( "factorial 15 starts with: {}", factorial_str.get(0..3).unwrap() );
+
+    // exercise 10
+    println!(">> 10");
+    let mut number2read = -321;
+    let mut number_string = utils::read_number(number2read);
+    println!( "{} is: {}", number2read, number_string );
+    number2read = 0;
+    number_string = utils::read_number(number2read);
+    println!( "{} is: {}", number2read, number_string );
 
 }

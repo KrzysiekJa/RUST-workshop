@@ -120,11 +120,11 @@ pub fn inverse_calculation_merchant(n: i32) -> i32
     return res;
 }
 
-pub fn generate_and_print_fibonacci(n: i32)
+pub fn generate_and_print_fibonacci(n: u32)
 {
-    let mut a_0: i32 = 0;
-    let mut a_1: i32 = 1;
-    let mut tmp: i32;
+    let mut a_0: u128 = 0;
+    let mut a_1: u128 = 1;
+    let mut tmp: u128;
 
     for _i in 1..n+1{
         print!("{} ", a_0);
@@ -136,7 +136,7 @@ pub fn generate_and_print_fibonacci(n: i32)
 
 pub fn get_multiplication_table()
 {
-    for i in 1..11
+    for i in 0..11
     {
         for j in 0..11
         {
@@ -144,5 +144,36 @@ pub fn get_multiplication_table()
         }
         print!("\n");
     }
+}
+
+pub fn get_factorial(num: u128) -> u128
+{
+    return (1..=num).product()
+}
+
+pub fn read_number(num: i32) -> String
+{
+    let mut final_str = String::new();
+    let mut tmp_str = "";
+    
+    for i_char in num.to_string().chars() {
+        match i_char {
+            '0' => tmp_str = "zero",
+            '1' => tmp_str = "one",
+            '2' => tmp_str = "two",
+            '3' => tmp_str = "three",
+            '4' => tmp_str = "four",
+            '5' => tmp_str = "five",
+            '6' => tmp_str = "six",
+            '7' => tmp_str = "seven",
+            '8' => tmp_str = "eight",
+            '9' => tmp_str = "nine",
+            '-' => tmp_str = "minus",
+            _ => println!("Invalid character: {}", i_char),
+        }
+        final_str.push_str(tmp_str);
+        final_str.push_str(" ");
+    }
+    return final_str;
 }
 
