@@ -57,4 +57,19 @@ fn main() {
     println!( "Counted numbers divisible 7 which, when divided by 2, 3, 4, 5, 6, gives the remainder r = 1:" );
     println!( "limit 2000: {}", counted_numbers_divisible_by_7_lim_2000 );
 
+    // exercise 6
+    println!(">> 6");
+    let mut merchant_capital = utils::inverse_calculation_merchant(2);
+    println!( "Merchant original capital for Venecia-Florencia: {}", merchant_capital );
+    merchant_capital = utils::inverse_calculation_merchant(3);
+    println!( "Merchant original capital for Venecia-Florencia-Pisa: {}", merchant_capital );
+
+    // exercise 7
+    println!(">> 7");
+    utils::generate_and_print_fibonacci( 30 );
+    println!( "" );
+
+    // exercise 8
+    utils::get_multiplication_table();
+
 }

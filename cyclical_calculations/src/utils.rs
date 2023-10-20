@@ -22,7 +22,7 @@ pub fn sum_number_sequence(n: i32) -> i32
     for i in 1..n+1
     {
         let mut str: String = String::new();
-        for j in 0..i
+        for _j in 0..i
         {
             str.push_str( &i.to_string() );
         }
@@ -108,3 +108,41 @@ pub fn count_numbers_divisible_by_7(limit: i32) -> i32
     }
     return count;
 }
+
+pub fn inverse_calculation_merchant(n: i32) -> i32
+{
+    let mut res: i32 = 0;
+
+    for _i in 1..n+1{
+        res += 12;
+        res /= 2;
+    }
+    return res;
+}
+
+pub fn generate_and_print_fibonacci(n: i32)
+{
+    let mut a_0: i32 = 0;
+    let mut a_1: i32 = 1;
+    let mut tmp: i32;
+
+    for _i in 1..n+1{
+        print!("{} ", a_0);
+        tmp = a_1;
+        a_1 += a_0;
+        a_0 = tmp;
+    }
+}
+
+pub fn get_multiplication_table()
+{
+    for i in 1..11
+    {
+        for j in 0..11
+        {
+            print!("{} ", i * j);
+        }
+        print!("\n");
+    }
+}
+
