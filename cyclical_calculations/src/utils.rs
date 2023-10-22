@@ -177,3 +177,34 @@ pub fn read_number(num: i32) -> String
     return final_str;
 }
 
+pub fn get_info_from_people_list( people_list: Vec<&str> )
+{
+    let mut people_list: Vec<String> = people_list.iter().map(|&s| s.to_lowercase()).collect();
+
+    let min_name = people_list.iter().fold(people_list.get(0), |acc, item| {
+        if item.len() < acc.unwrap().len() { Some(&item) } else { acc }
+    });
+    let max_name = people_list.iter().fold(people_list.get(0), |acc, item| {
+        if item.len() > acc.unwrap().len() { Some(&item) } else { acc }
+    });
+    println!("Names: min: {}, max: {}", min_name.unwrap(), max_name.unwrap());
+
+    people_list.sort_by(|a, b| a.len().cmp(&b.len()));
+    println!("Sorted: {:?}", people_list);
+}
+
+pub fn make_christmas_tree(n: u32)
+{
+    for i in 0..n
+    {
+        for j in i..(n+1)*2
+        {
+            print!(" ");
+        }
+        for j in 0..(i+1)*2 - 1
+        {
+            print!("*");
+        }
+        print!("\n");
+    }
+}

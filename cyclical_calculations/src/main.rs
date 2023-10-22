@@ -87,4 +87,14 @@ fn main() {
     number_string = utils::read_number(number2read);
     println!( "{} is: {}", number2read, number_string );
 
+    // exercise 11
+    println!(">> 11");
+    let people_list: Vec<&str> = vec!["Eric", "Mandy", "Jen", "Josh", "David", "Matt", "Danielle", "Willie"];
+    println!("Sorted: {:?}", people_list);
+    utils::get_info_from_people_list( people_list );
+
+    // exercise 12
+    println!(">> 12");
+    utils::make_christmas_tree(5);
+
 }
