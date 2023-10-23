@@ -1,3 +1,4 @@
+use std::f32::consts::PI;
 mod utils;
 
 fn main() {
@@ -96,5 +97,17 @@ fn main() {
     // exercise 12
     println!(">> 12");
     utils::make_christmas_tree(5);
+
+    // exercise 13
+    println!(">> 13");
+    let mut x_cos = 2.0 * PI;
+    let mut y_cos = utils::calculate_cos(x_cos);
+    println!("cos({}) = {}", x_cos, y_cos);
+    x_cos = 0.5 * PI;
+    y_cos = utils::calculate_cos(x_cos);
+    println!("cos({}) = {}", x_cos, y_cos);
+    x_cos = 0.5;
+    y_cos = utils::calculate_cos(x_cos);
+    println!("cos({}) = {}", x_cos, y_cos);
 
 }

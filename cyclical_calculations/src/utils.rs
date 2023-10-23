@@ -1,3 +1,4 @@
+
 pub fn decrypt(text: String, shift_count: u8, shift_rigth: bool) -> String
 {
     let mut decrypted_text = "".to_string();
@@ -197,14 +198,29 @@ pub fn make_christmas_tree(n: u32)
 {
     for i in 0..n
     {
-        for j in i..(n+1)*2
+        for _j in i..(n+1)*2
         {
             print!(" ");
         }
-        for j in 0..(i+1)*2 - 1
+        for _j in 0..(i+1)*2 - 1
         {
             print!("*");
         }
         print!("\n");
     }
 }
+
+pub fn calculate_cos(x_val: f32) -> f32
+{
+    let mut cos_val: f32 = 0.0;
+    let mut c_i: f32 = 1.0; // c_0 = 1
+    let n: i32 = 15;
+
+    for i in 1..n+1 // starting with c_1
+    {
+        cos_val += c_i;
+        c_i = -c_i * (f32::powf(x_val, 2.0) / ( (2*i * (2*i-1)) as f32));
+    }
+    return cos_val;
+}
+
