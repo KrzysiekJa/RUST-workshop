@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 
 pub fn decrypt(text: String, shift_count: u8, shift_rigth: bool) -> String
 {
@@ -214,9 +216,9 @@ pub fn calculate_cos(x_val: f32) -> f32
 {
     let mut cos_val: f32 = 0.0;
     let mut c_i: f32 = 1.0; // c_0 = 1
-    let n: i32 = 15;
+    let n_iter: i32 = 15;
 
-    for i in 1..n+1 // starting with c_1
+    for i in 1..n_iter+1 // starting with c_1
     {
         cos_val += c_i;
         c_i = -c_i * (f32::powf(x_val, 2.0) / ( (2*i * (2*i-1)) as f32));
@@ -224,3 +226,12 @@ pub fn calculate_cos(x_val: f32) -> f32
     return cos_val;
 }
 
+pub fn convert_numbers_to_systems(decimal_val: u32) -> HashMap<&'static str,String>
+{
+    let mut res_map: HashMap<&str, String> = HashMap::new();
+    res_map.insert("decimal", decimal_val.to_string());
+    res_map.insert("binary", format!("{:b}", decimal_val));
+    res_map.insert("octal", format!("{:o}", decimal_val));
+    res_map.insert("hexadecimal", format!("{:x}", decimal_val));
+    return res_map;
+}

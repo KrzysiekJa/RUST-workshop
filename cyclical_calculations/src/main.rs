@@ -1,4 +1,5 @@
 use std::f32::consts::PI;
+use std::collections::HashMap;
 mod utils;
 
 fn main() {
@@ -109,5 +110,11 @@ fn main() {
     x_cos = 0.5;
     y_cos = utils::calculate_cos(x_cos);
     println!("cos({}) = {}", x_cos, y_cos);
+
+    // exercise 14
+    println!(">> 14");
+    let res_map: HashMap<&str, String> = utils::convert_numbers_to_systems(15);
+    println!("{} -> b:{} o:{} h:{}", res_map.get(&"decimal").unwrap(), res_map.get(&"binary").unwrap(), 
+            res_map.get(&"octal").unwrap(),res_map.get(&"hexadecimal").unwrap());
 
 }
