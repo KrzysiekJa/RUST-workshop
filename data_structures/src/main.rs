@@ -21,4 +21,13 @@ fn main()
     let results_minimum: (i32, u32, u32) = utils::min_idx_search_list(linked_list);
     println!("\n min: {}, index: {}, comparisons: {}", results_minimum.0, results_minimum.1, results_minimum.2);
 
+    //exercise 4
+    println!(">> 4");
+    linked_list = LinkedList::from([7, 1, 291, 15, -2, 3, 55, 102, -2, 291, 34]);
+    for i in linked_list.iter() {
+        print!("-> {} ", i);
+    }
+    let results_minimum: (i32, u32, u32) = utils::min_idx_max_search_list(linked_list);
+    println!("\n min: {}, index: {}, comparisons: {}", results_minimum.0, results_minimum.1, results_minimum.2);
+
 }
