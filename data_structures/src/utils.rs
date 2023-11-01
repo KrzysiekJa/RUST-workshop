@@ -60,3 +60,24 @@ pub fn min_idx_max_search_list(list: LinkedList<i32>) -> (i32, u32, u32)
     return (* min.unwrap(), min_index, counted);
 }
 
+pub fn max_idx_max_search_list(list: LinkedList<i32>) -> (i32, u32, u32)
+{
+    let limit: u32 = list.len() as u32 - 1;
+    let mut amount: u32 = 0;
+    let mut counted: u32 = 0;
+    let mut iter: linked_list::Iter<'_, i32> = list.iter();
+    let mut max: Option<&i32> = iter.next();
+    let mut max_index: u32 = 0;
+
+    while amount < limit {
+        let tmp = iter.next();
+        if max <= tmp {
+            max = tmp;
+            max_index = amount + 1;
+        }
+        counted += 1;
+        amount += 1;
+    }
+    return (* max.unwrap(), max_index, counted);
+}
+
