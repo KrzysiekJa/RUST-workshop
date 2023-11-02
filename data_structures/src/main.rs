@@ -41,5 +41,14 @@ fn main()
 
     //exercise 6
     println!(">> 6");
+    linked_list = LinkedList::from([7, 1, 291, 15, -2, 3, 55, 102, -2, 291, 34]);
+    for i in linked_list.iter() {
+        print!("-> {} ", i);
+    }
+    let results_maximum: (i32, i32, u32) = utils::min_max_search_list(linked_list);
+    println!("\n min: {}, max: {}, comparisons: {}", results_maximum.0, results_maximum.1, results_maximum.2);
+
+    //exercise 7
+    println!(">> 7");
 
 }
