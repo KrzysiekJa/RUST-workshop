@@ -102,3 +102,7 @@ pub fn min_max_search_list(list: LinkedList<i32>) -> (i32, i32, u32)
     return (* min.unwrap(), * max.unwrap(), counted);
 }
 
+pub fn sum_of_elements(list: LinkedList<i32>) -> i32
+{
+    return list.iter().sum();
+}

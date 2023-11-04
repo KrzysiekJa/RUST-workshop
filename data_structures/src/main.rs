@@ -50,5 +50,13 @@ fn main()
 
     //exercise 7
     println!(">> 7");
+    println!("Different sequences:");
+
+    linked_list = LinkedList::from([7, 1, 291, 15, -2, 3, 55, 102, -2, 291, 34]);
+    for i in linked_list.iter() {
+        print!("-> {} ", i);
+    }
+    let sequence_sum = utils::sum_of_elements(linked_list);
+    println!("\n sum: {}, ", sequence_sum);
 
 }
