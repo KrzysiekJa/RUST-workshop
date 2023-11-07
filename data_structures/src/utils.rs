@@ -106,3 +106,15 @@ pub fn sum_of_elements(list: LinkedList<i32>) -> i32
 {
     return list.iter().sum();
 }
+
+pub fn product_of_elements(list: LinkedList<i32>) -> i64
+{
+    let product: i64 = list.iter().map(|x| *x as i64).product();
+    return product;
+}
+
+pub fn mean_of_elements(list: LinkedList<i32>) -> i32
+{
+    let sum: i32 = list.iter().sum();
+    return sum / list.len() as i32;
+}
