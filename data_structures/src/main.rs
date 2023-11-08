@@ -52,4 +52,7 @@ fn main()
     let sequence_mean: i32 = utils::mean_of_elements(linked_list.clone());
     println!(" mean: {}", sequence_mean);
 
+    let sequence_mean_pos: f32 = utils::mean_of_positive_elements(linked_list.clone());
+    println!(" mean: {}", sequence_mean_pos);
+
 }

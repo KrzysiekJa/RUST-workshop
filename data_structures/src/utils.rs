@@ -118,3 +118,13 @@ pub fn mean_of_elements(list: LinkedList<i32>) -> i32
     let sum: i32 = list.iter().sum();
     return sum / list.len() as i32;
 }
+
+pub fn mean_of_positive_elements(list: LinkedList<i32>) -> f32
+{
+    let sum: i32 = list.iter().map( |x: &i32|
+        match *x > 0 {
+            true  => *x,
+            false => 0,
+        }).sum();
+    return sum as f32 / ( list.len() as f32 );
+}
