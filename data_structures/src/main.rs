@@ -55,4 +55,10 @@ fn main()
     let sequence_mean_pos: f32 = utils::mean_of_positive_elements(linked_list.clone());
     println!(" mean: {}", sequence_mean_pos);
 
+    let sequence_mean_pos: i128 = utils::multiplication_of_elements(linked_list);
+    println!(" mean: {}", sequence_mean_pos);
+
+    //exercise 8
+    println!(">> 8");
+
 }

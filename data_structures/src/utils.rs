@@ -128,3 +128,20 @@ pub fn mean_of_positive_elements(list: LinkedList<i32>) -> f32
         }).sum();
     return sum as f32 / ( list.len() as f32 );
 }
+
+pub fn multiplication_of_elements(list: LinkedList<i32>) -> i128
+{
+    let mut final_result: i128 = 0;
+    let mut iter: linked_list::Iter<'_, i32> = list.iter();
+
+    for k in 0..list.len() - 1 {
+        let mut tmp_mult: i128 = 1;
+        let element: i128 = *iter.next().unwrap() as i128;
+        for _i in 0..k {
+            tmp_mult *= element;
+        }
+        final_result += tmp_mult;
+    }
+    
+    return final_result;
+}
