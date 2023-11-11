@@ -55,10 +55,25 @@ fn main()
     let sequence_mean_pos: f32 = utils::mean_of_positive_elements(linked_list.clone());
     println!(" mean: {}", sequence_mean_pos);
 
-    let sequence_mean_pos: i128 = utils::multiplication_of_elements(linked_list);
-    println!(" mean: {}", sequence_mean_pos);
+    let sequence_multiplication: i128 = utils::multiplication_of_elements(linked_list.clone());
+    println!(" mean: {}", sequence_multiplication);
 
     //exercise 8
     println!(">> 8");
+    let mut vec: Vec<_> = linked_list.clone().into_iter().collect();
+    vec.sort();
+    let linked_list: LinkedList<_> = vec.into_iter().collect();
+
+    for i in linked_list.iter() {
+        print!("-> {} ", i);
+    }
+
+    let key: i32 = 55;
+    let index: Option<u32> = utils::find_index(linked_list, key);
+    println!("\nkey: {}-> idx: {}", key, index.unwrap());
+
+    //exercise 9
+    println!(">> 9");
+
 
 }

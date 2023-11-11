@@ -145,3 +145,20 @@ pub fn multiplication_of_elements(list: LinkedList<i32>) -> i128
     
     return final_result;
 }
+
+pub fn find_index (list: LinkedList<i32>, key: i32) -> Option<u32>
+{
+    let limit: u32 = list.len() as u32;
+    let mut counted: u32 = 0;
+    let mut iter: linked_list::Iter<'_, i32> = list.iter();
+
+    while counted < limit {
+        let element: i32 = *iter.next().unwrap();
+
+        if element == key {
+            return Some(counted);
+        }
+        counted += 1;
+    }
+    return None;
+}
