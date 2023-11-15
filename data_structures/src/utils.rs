@@ -162,3 +162,15 @@ pub fn find_index (list: LinkedList<i32>, key: i32) -> Option<u32>
     }
     return None;
 }
+
+pub fn found_if_sum_equal_x (list_a: &[u32], list_b: &[u32], x: u32) -> bool
+{
+    for a in list_a {
+        for b in list_b {
+            if a+b == x {
+                return true;
+            }
+        }
+    }
+    return false;
+}

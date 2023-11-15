@@ -1,4 +1,5 @@
 use std::collections::LinkedList;
+use rand::Rng;
 mod utils;
 
 fn main()
@@ -56,7 +57,7 @@ fn main()
     println!(" mean: {}", sequence_mean_pos);
 
     let sequence_multiplication: i128 = utils::multiplication_of_elements(linked_list.clone());
-    println!(" mean: {}", sequence_multiplication);
+    println!(" multiplication: {}", sequence_multiplication);
 
     //exercise 8
     println!(">> 8");
@@ -74,6 +75,15 @@ fn main()
 
     //exercise 9
     println!(">> 9");
+    let mut rng: rand::rngs::ThreadRng = rand::thread_rng();
 
+    let vec_1: Vec<u32> = (0..8).map(|_| rng.gen_range(0..11)).collect();
+    let vec_2: Vec<u32> = (0..8).map(|_| rng.gen_range(0..11)).collect();
+    println!("Vector 1: {:?}", vec_1);
+    println!("Vector 2: {:?}", vec_2);
+
+    let x_to_find: u32 = 17;
+    let searching_result: bool = utils::found_if_sum_equal_x(&vec_1, &vec_2, x_to_find);
+    println!("\nAre elements of vecs making sum of {} : {}", x_to_find, searching_result);
 
 }
