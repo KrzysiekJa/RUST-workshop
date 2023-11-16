@@ -174,3 +174,8 @@ pub fn found_if_sum_equal_x (list_a: &[u32], list_b: &[u32], x: u32) -> bool
     }
     return false;
 }
+
+pub fn found_if_sum_equal_x_v_gpt (list_a: &[u32], list_b: &[u32], x: u32) -> bool
+{
+    return list_a.iter().any(|&a| list_b.iter().any(|&b| a + b == x));
+}

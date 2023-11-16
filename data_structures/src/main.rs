@@ -86,4 +86,7 @@ fn main()
     let searching_result: bool = utils::found_if_sum_equal_x(&vec_1, &vec_2, x_to_find);
     println!("\nAre elements of vecs making sum of {} : {}", x_to_find, searching_result);
 
+    let searching_result: bool = utils::found_if_sum_equal_x_v_gpt(&vec_1, &vec_2, x_to_find);
+    println!("\nAre elements of vecs making sum of {} : {}", x_to_find, searching_result);
+
 }
