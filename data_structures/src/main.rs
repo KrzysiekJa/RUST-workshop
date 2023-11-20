@@ -1,5 +1,6 @@
 use std::collections::LinkedList;
 use rand::Rng;
+use std::time::Instant;
 mod utils;
 
 fn main()
@@ -88,5 +89,25 @@ fn main()
 
     let searching_result: bool = utils::found_if_sum_equal_x_v_gpt(&vec_1, &vec_2, x_to_find);
     println!("\nAre elements of vecs making sum of {} : {}", x_to_find, searching_result);
+
+    //exercise 9 - benchmarks
+    println!(">> benchmarks");
+    let vecs_vec_1:  Vec< Vec<u32> > = (0..100).map(|_| (0..10).map(|_| rng.gen_range(0..11)).collect() ).collect();
+    let vecs_vec_2:  Vec< Vec<u32> > = (0..100).map(|_| (0..10).map(|_| rng.gen_range(0..11)).collect() ).collect();
+    let x_to_find: u32 = 20;
+
+    let timer = Instant::now();
+    for i in 0..vecs_vec_1.len(){
+        utils::found_if_sum_equal_x(&vecs_vec_1[i], &vecs_vec_2[i], x_to_find);
+    }
+    let elapsed_time = timer.elapsed();
+    println!("Version 1 - elapsed time: {:.6?}", elapsed_time);
+
+    let timer = Instant::now();
+    for i in 0..vecs_vec_1.len(){
+        utils::found_if_sum_equal_x_v_gpt(&vecs_vec_1[i], &vecs_vec_2[i], x_to_find);
+    }
+    let elapsed_time = timer.elapsed();
+    println!("Version 2 - elapsed time: {:.6?}", elapsed_time);
 
 }
