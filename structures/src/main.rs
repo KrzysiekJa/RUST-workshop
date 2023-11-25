@@ -1,3 +1,6 @@
-fn main() {
+mod pear;
+
+fn main()
+{
     println!("Hello, world!");
 }
