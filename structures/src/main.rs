@@ -9,10 +9,12 @@ fn main()
     println!("pear: {:?}", pear);
 
     pear.get_variety();
-    *pear.set_variety() = "Papierówka".to_string();
+    *pear.set_variety() = "Węgierka".to_string();
 
     pear.get_color();
+    *pear.set_color() = pear::Color::Red;
     *pear.set_color() = pear::Color::Green;
+    *pear.set_color() = pear::Color::Purple;
 
     pear.get_weight();
     *pear.set_weight() = 0.15;
@@ -21,6 +23,7 @@ fn main()
     *pear.set_size() = 0.1;
 
     pear.get_taste();
+    *pear.set_taste() = pear::Taste::Sour;
     *pear.set_taste() = pear::Taste::Sweet;
 
     println!("pear: {:?}", pear);

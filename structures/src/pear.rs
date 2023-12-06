@@ -2,7 +2,7 @@
 pub enum Color {
     Red,
     Green,
-    Yellow,
+    Purple,
     Orange
 }
 #[derive(Debug, Copy, Clone)]
