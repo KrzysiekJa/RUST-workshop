@@ -1,4 +1,5 @@
 mod pear;
+mod engine;
 
 fn main()
 {
@@ -27,4 +28,9 @@ fn main()
     *pear.set_taste() = pear::Taste::Sweet;
 
     println!("pear: {:?}", pear);
+
+    let mut engine: engine::Engine = engine::Engine::new(String::from("V8"), 20.0, 360.0);
+
+    println!("engine: {:?}", engine);
+    
 }
