@@ -32,5 +32,16 @@ fn main()
     let mut engine: engine::Engine = engine::Engine::new(String::from("V8"), 20.0, 360.0);
 
     println!("engine: {:?}", engine);
+
+    engine.get_mark();
+    *engine.set_mark() = "V6".to_string();
+
+    engine.get_capacity();
+    *engine.set_capacity() = 18.0;
+
+    engine.get_horsepower();
+    *engine.set_horsepower() = 330.0;
+
+    println!("engine: {:?}", engine);
     
 }
