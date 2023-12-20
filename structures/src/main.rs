@@ -1,5 +1,6 @@
 mod pear;
 mod engine;
+mod rocket;
 
 fn main()
 {
@@ -43,5 +44,7 @@ fn main()
     *engine.set_horsepower() = 330.0;
 
     println!("engine: {:?}", engine);
-    
+
+    let mut rocket: rocket::Rocket = rocket::Rocket::new(35.3, 300.0, (2, 3), 2500.5);
+
 }
