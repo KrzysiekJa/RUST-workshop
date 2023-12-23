@@ -46,5 +46,21 @@ fn main()
     println!("engine: {:?}", engine);
 
     let mut rocket: rocket::Rocket = rocket::Rocket::new(35.3, 300.0, (2, 3), 2500.5);
+    
+    println!("rocket: {:?}", rocket);
+
+    rocket.get_weight();
+    *rocket.set_weight() = 36.1;
+
+    rocket.get_fuel_capacity();
+    *rocket.set_fuel_capacity() = 341.0;
+
+    rocket.get_position();
+    *rocket.set_position() = (3, 3);
+
+    rocket.get_velocity();
+    *rocket.set_velocity() = 2457.3;
+
+    println!("rocket: {:?}\n", rocket);
 
 }

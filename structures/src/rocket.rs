@@ -23,43 +23,43 @@ impl Rocket
        };
     }
 
-    pub fn get_weight(&mut self ) -> &mut f32 
+    pub fn get_weight( &self ) -> f32 
     {
-       return &mut self.weight;
+       return self.weight;
     }
 
-    pub fn set_weight( &self ) -> f32
+    pub fn set_weight( &mut self ) -> &mut f32
     {
-        return self.weight;
+        return &mut self.weight;
     }
 
-    pub fn get_fuel_capacity(&mut self ) -> &mut f32
+    pub fn get_fuel_capacity( &self ) -> f32
     {
-       return &mut self.fuel_capacity;
+       return self.fuel_capacity;
     }
 
-    pub fn set_fuel_capacity( &self ) -> f32
+    pub fn set_fuel_capacity( &mut self ) -> &mut f32
     {
-        return self.fuel_capacity;
+        return &mut self.fuel_capacity;
     }
 
-    pub fn get_position(&mut self ) -> &mut (u32, u32)
+    pub fn get_position( &self ) -> (u32, u32)
     {
-       return &mut self.position;
+       return self.position;
     }
 
-    pub fn set_position( &self ) -> (u32, u32)
+    pub fn set_position( &mut self ) -> &mut (u32, u32)
     {
-        return self.position;
+        return &mut self.position;
     }
 
-    pub fn get_velocity(&mut self ) -> &mut f32
+    pub fn get_velocity( &self ) -> f32
     {
-       return &mut self.velocity;
+       return self.velocity;
     }
 
-    pub fn set_velocity( &self ) -> f32
+    pub fn set_velocity( &mut self ) -> &mut f32
     {
-        return self.velocity;
+        return &mut self.velocity;
     }
 }
