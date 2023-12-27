@@ -62,4 +62,12 @@ impl Rocket
     {
         return &mut self.velocity;
     }
+
+    pub fn display() -> String
+    {
+
+        
+        return "".to_string();
+    }
+
 }
